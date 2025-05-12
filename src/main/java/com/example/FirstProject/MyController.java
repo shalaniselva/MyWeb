@@ -37,6 +37,16 @@ public class MyController {
 	public ResponseEntity<Object> getHello(){
 		return ResponseEntity.ok("Hello world");
 	}
+	@GetMapping(value = "getmin/{m}")
+	public String getmin(@PathVariable int m) {
+		if (m % 2 == 1) {
+			return "Even";
+		} else {
+			return "Odd";
+
+		}
+	}
+	
 
 	@GetMapping(value = "geti/{n}")
 	public String getVal(@PathVariable int n) {
